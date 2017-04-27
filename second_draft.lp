@@ -13,9 +13,9 @@ zahl(1..9).
 %es ist nicht so, dass in der gleichen Reihe zwei gleiche Zahlen stehen dürfen
 :- sudoku(X,Y,Z), sudoku(X,YY,Z), Y!=YY, Z==Z.
 %es ist nicht so, dass zwei gleiche Zahlen in einer Diagonale stehen dürfen
-:- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, Z==Z, (X,Y,Z)!=(XX,YY,ZZ), I-J == II-JJ.
+:- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, Z==Z, (X,Y,Z)!=(XX,YY,Z), X-Y == XX-YY.
 %es ist nicht so, dass zwei gleiche Zahlen in einer Diagonale stehen dürfen
-:- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, Z==Z, (X,Y,Z)!=(XX,YY,ZZ), I+J == II+JJ.
+:- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, Z==Z, (X,Y,Z)!=(XX,YY,Z), X+Y == XX+YY.
 %es ist nicht so, dass man Stellen belegen darf, die schon belegt wurden
 %rechte Seite ist eine Zuweisung
 
