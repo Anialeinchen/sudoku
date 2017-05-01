@@ -4,7 +4,7 @@
 %sudoku(X,Y,Z), X:Spalte Y:Reihe, Z: Zahl
 %das ist möglich - die Ausgabe ist dann sudoku(1,1,1), ... sudoku(9,9,9)
 %51= 81-30 = 9*9 - 30 initials
-{sudoku(1..9,1..9,1..9)}=51.
+{sudoku(1..9,1..9,1..9)}=81.
 
 zahl(1..9).
 
@@ -20,7 +20,7 @@ zahl(1..9).
 %rechte Seite ist eine Zuweisung
 
 %evtl X==XX
-:- {sudoku(X,Y,Z):initial(X,Y,Z)} != 51 :- initial(1,1,5), initial(1,2,3), initial(1,5,7),
+:- {sudoku(X,Y,Z):initial(X,Y,Z)} :- initial(1,1,5), initial(1,2,3), initial(1,5,7),
 initial(2,1,6), initial(2,4,1), initial(2,5,9), initial(2,6,5),
 initial(3,2,9), initial(3,3,8), initial(3,8,6),
 initial(4,1,8), initial(4,5,6), initial(4,9,3),
