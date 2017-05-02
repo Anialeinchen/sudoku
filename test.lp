@@ -11,14 +11,16 @@
 :- sudoku(X,Y,Z), sudoku(XX,Y,Z), X!=XX.
 %es ist nicht so, dass in der gleichen Reihe zwei gleiche Zahlen stehen dürfen
 :- sudoku(X,Y,Z), sudoku(X,YY,Z), Y!=YY.
-%es ist nicht so, dass zwei gleiche Zahlen in einer Diagonale stehen dürfen
+%es ist nicht so, dass zwei gleiche Zahlen auf einer Diagonale stehen dürfen
 :- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, (X,Y,Z)!=(XX,YY,Z), X-Y == XX-YY.
-%es ist nicht so, dass zwei gleiche Zahlen in einer Diagonale stehen dürfen
+%es ist nicht so, dass zwei gleiche Zahlen auf einer Diagonale stehen dürfen
 :- sudoku(X,Y,Z), sudoku(XX,YY,Z), Y!=YY, X!=XX, (X,Y,Z)!=(XX,YY,Z), X+Y == XX+YY.
 
 %es ist nicht so, dass man Stellen belegen darf, die schon belegt wurden
 %rechte Seite ist eine Zuweisung
-:- {sudoku(X,Y,Z):initial(X,Y,Z)} 
+:- sudoku(X,Y,Z):initial(X,Y,Z).
+
+sudoku(X,Y,Z):-initial(X,Y,Z).
 
 initial(1,1,5). initial(1,2,3). initial(1,5,7).
 initial(2,1,6). initial(2,4,1). initial(2,5,9). initial(2,6,5).
@@ -32,6 +34,7 @@ initial(9,5,8). initial(9,8,7). initial(9,9,9).
 
 
 
+%81 { sudoku(X,Y,Z) } 81.
 #show sudoku/3.
 
 %clingo test.lp 2

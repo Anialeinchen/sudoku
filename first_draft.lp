@@ -67,3 +67,22 @@ initial(9,5,8). initial(9,8,7). initial(9,9,9).
 #show initial/3.
 
 #show zelle/2.
+
+
+input:
+x(1..9).
+#show x/1.
+
+output:
+x(1).
+x(2).
+x(3).
+x(4).
+x(5).
+x(6).
+x(7).
+x(8).
+x(9).
+#show x/1.
+
+conclusion: capital letters are not allowed as binary predicates
